@@ -49,8 +49,6 @@ public class MeetingController {
     public String getMeetingInfo(@PathVariable long id, Participant participant, Model model) {
         Meeting meeting = meetingRepository.findOne(id);
 
-        participant.setMeetingId(meeting.getId());
-
         meeting.addParticipant(participant);
 
         participantRepository.save(participant);
